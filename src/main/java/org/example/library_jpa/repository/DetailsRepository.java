@@ -3,10 +3,12 @@ package org.example.library_jpa.repository;
 import org.example.library_jpa.entity.Details;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 public interface DetailsRepository extends CrudRepository<Details, Integer>{
-    Details findByEmail(String email);
+    List<Details> findByEmail(String email);
 
-    Details findByNameContains(String name);
+    List<Details> findByNameContains(String name);
 
-    Details findByNameIgnoreCase(String name);
+    List<Details> findByNameIgnoreCase(String name);
 }
