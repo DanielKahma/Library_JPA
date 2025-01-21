@@ -26,11 +26,11 @@ public class BookLoan {
     private boolean returned;
 
     @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "appuser_id")
+    @JoinColumn
     private AppUser borrower;
 
     @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "book_id")
+    @JoinColumn
     private Book book;
 
 

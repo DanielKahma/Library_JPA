@@ -1,8 +1,12 @@
 package org.example.library_jpa.repository;
 
+import jakarta.transaction.Transactional;
 import org.example.library_jpa.entity.BookLoan;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -19,7 +23,10 @@ public interface BookLoanRepository extends CrudRepository<BookLoan, Integer> {
 
     List<BookLoan> findByLoanDate(LocalDate loanDate, LocalDate returnDate);
 
-    void markAsReturned(Integer loanId);
+    @Modifying
+    @Transactional
+    @Query("UPDATE BookLoan b SET b.returned = true WHERE b.id = :loanId")
+    void markAsReturned(@Param("loanId")int loanId);
 
 
 }
