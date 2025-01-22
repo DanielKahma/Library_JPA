@@ -13,9 +13,14 @@ import java.util.Set;
 
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
     List<Author> findByFirstName(String firstName);
+
     List<Author> findByLastName(String lastName);
-    List<Author> findByFirstNameContainingOrLastNameContaining(String keyword1, String keyword2);
+
+    @Query("SELECT a FROM Author a WHERE a.firstName like %:keyword% OR a.lastName LIKE %:keyword%")
+    List<Author> findByFirstNameContainingOrLastNameContaining(@Param("keyword") String keyword2);
+
     List<Author> findByWrittenBooks_BookId(int bookId);
+
     @Modifying
     @Transactional
     @Query("UPDATE Author a SET a.firstName = :firstName, a.lastName = :lastName WHERE a.id = :Id")
