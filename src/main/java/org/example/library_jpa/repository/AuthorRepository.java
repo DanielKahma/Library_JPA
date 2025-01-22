@@ -14,7 +14,7 @@ import java.util.Set;
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
     List<Author> findByFirstName(String firstName);
     List<Author> findByLastName(String lastName);
-    List<Author> findByFirstNameContainingOrLastNameContaining(String keyword);
+    List<Author> findByFirstNameContainingOrLastNameContaining(String keyword1, String keyword2);
     List<Author> findByWrittenBooks_BookId(int bookId);
     @Modifying
     @Transactional
