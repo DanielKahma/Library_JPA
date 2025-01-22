@@ -3,6 +3,9 @@ package org.example.library_jpa.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.boot.context.config.ConfigDataLocationNotFoundException;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,7 +25,30 @@ public class Book {
     @Column(nullable = false)
     private int maxLoanDays;
 
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "book_author",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id")
+    )
+    private List<Author> authors;
 
+    public Book(Integer id, String isbn, String title, int maxLoanDays, List<Author> authors) {
+        this.id = id;
+        this.isbn = isbn;
+        Title = title;
+        this.maxLoanDays = maxLoanDays;
+        this.authors = authors;
+    }
 
+    public Book(String isbn, String title, int maxLoanDays, List<Author> authors) {
+        this.isbn = isbn;
+        Title = title;
+        this.maxLoanDays = maxLoanDays;
+        this.authors = authors;
+    }
 
+    public Book() {
+
+    }
 }
