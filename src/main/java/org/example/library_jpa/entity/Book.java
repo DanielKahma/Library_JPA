@@ -33,6 +33,34 @@ public class Book {
     )
     private List<Author> authors;
 
+    public void addAuthor(Author author) {
+        if (author != null && authors != null) {
+            authors.add(author);
+        }
+        else {
+            try{
+                throw new IllegalArgumentException("authors cannot be null" );
+            }
+            catch (IllegalArgumentException e){
+                throw new IllegalArgumentException("authors cannot be null" );
+            }
+        }
+    }
+
+    public void removeAuthor(Author author) {
+        if (author != null && authors != null) {
+            authors.remove(author);
+        }
+        else {
+            try {
+                throw new IllegalArgumentException("authors cannot be null");
+            }
+            catch (IllegalArgumentException e){
+                throw new IllegalArgumentException("authors cannot be null" );
+            }
+        }
+    }
+
     public Book(Integer id, String isbn, String title, int maxLoanDays, List<Author> authors) {
         this.id = id;
         this.isbn = isbn;

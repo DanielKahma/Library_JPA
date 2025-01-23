@@ -1,29 +1,40 @@
 package org.example.library_jpa.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 public class AppUser {
+    @Getter
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Integer id;
 
+    @Getter
     @Column(unique = true, nullable = false)
     private String username;
 
+    @Getter
     @Column(nullable = false)
     private String password;
 
+    @Getter
     @Column(nullable = false)
     private LocalDateTime regDate;
 
     @OneToOne
     @JoinColumn(name = "user_details_id")
     private Details userDetails;
+
+    @OneToMany(
+            cascade = CascadeType.ALL, mappedBy = "borrower"
+    )
+    private List<BookLoan> loans;
 
 
     public AppUser(Integer id, String username, String password, LocalDateTime regDate) {
@@ -42,22 +53,6 @@ public class AppUser {
 
     public AppUser() {
 
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public LocalDateTime getRegDate() {
-        return regDate;
     }
 
     public Details getUserDetail() {

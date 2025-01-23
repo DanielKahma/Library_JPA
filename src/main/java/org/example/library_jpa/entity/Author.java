@@ -23,6 +23,33 @@ public class Author {
             cascade = {CascadeType.ALL}, mappedBy = "authors"
     )
     private Set<Book> writtenBooks;
+    public void addBook(Book writtenBook) {
+        if (writtenBooks != null) {
+            writtenBooks.add(writtenBook);
+        }
+        else {
+            try{
+                throw new IllegalArgumentException("book cannot be null");
+            }
+            catch(IllegalArgumentException e){
+                throw new IllegalArgumentException("book cannot be null");
+            }
+        }
+    }
+
+    public void removeBook(Book writtenBook) {
+        if (writtenBooks != null) {
+            writtenBooks.remove(writtenBook);
+        }
+        else {
+            try{
+                throw new IllegalArgumentException("book cannot be null");
+            }
+            catch(IllegalArgumentException e){
+                throw new IllegalArgumentException("book cannot be null");
+            }
+        }
+    }
 
     public Author() {
     }
