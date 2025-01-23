@@ -1,6 +1,6 @@
-package org.example.library_jpa.repository;
+package org.example.libraryJPA.repository;
 
-import org.example.library_jpa.entity.Details;
+import org.example.libraryJPA.entity.Details;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

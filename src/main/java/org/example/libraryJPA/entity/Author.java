@@ -1,4 +1,4 @@
-package org.example.library_jpa.entity;
+package org.example.libraryJPA.entity;
 
 import jakarta.persistence.*;
 

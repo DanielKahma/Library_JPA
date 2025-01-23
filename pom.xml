@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>Library_JPA</artifactId>
+    <artifactId>LibraryJPA</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Library_JPA</name>
-    <description>Library_JPA</description>
+    <name>LibraryJPA</name>
+    <description>LibraryJPA</description>
     <url/>
     <licenses>
         <license/>

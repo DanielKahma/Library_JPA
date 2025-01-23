@@ -1,11 +1,8 @@
-package org.example.library_jpa.entity;
+package org.example.libraryJPA.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.engine.internal.Cascade;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity

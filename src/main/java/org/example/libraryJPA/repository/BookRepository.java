@@ -1,12 +1,8 @@
-package org.example.library_jpa.repository;
+package org.example.libraryJPA.repository;
 
-import org.example.library_jpa.entity.AppUser;
-import org.example.library_jpa.entity.Book;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.example.libraryJPA.entity.Book;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 public interface BookRepository extends CrudRepository <Book, Integer> {

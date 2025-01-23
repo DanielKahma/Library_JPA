@@ -1,7 +1,6 @@
-package org.example.library_jpa.entity;
+package org.example.libraryJPA.entity;
 
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Objects;

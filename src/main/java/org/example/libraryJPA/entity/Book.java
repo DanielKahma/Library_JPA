@@ -1,9 +1,10 @@
-package org.example.library_jpa.entity;
+package org.example.libraryJPA.entity;
 
 import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.boot.context.config.ConfigDataLocationNotFoundException;
+
 
 import java.util.List;
 
@@ -11,6 +12,8 @@ import java.util.List;
 @Getter
 @Setter
 public class Book {
+    @Setter
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false, nullable = false)
@@ -78,5 +81,9 @@ public class Book {
 
     public Book() {
 
+    }
+
+    public Long getId(Long id) {
+        return id;
     }
 }

@@ -1,6 +1,6 @@
-package org.example.library_jpa.repository;
+package org.example.libraryJPA.repository;
 
-import org.example.library_jpa.entity.AppUser;
+import org.example.libraryJPA.entity.AppUser;
 import org.springframework.data.repository.CrudRepository;
 
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package org.example.library_jpa;
+package org.example.libraryJPA;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LibraryJpaApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(LibraryJpaApplication.class, args);
     }
 

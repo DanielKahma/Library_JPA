@@ -1,15 +1,13 @@
-package org.example.library_jpa.repository;
+package org.example.libraryJPA.repository;
 
 import jakarta.transaction.Transactional;
-import org.example.library_jpa.entity.Author;
-import org.example.library_jpa.entity.Book;
+import org.example.libraryJPA.entity.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
-import java.util.Set;
 
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
     List<Author> findByFirstName(String firstName);

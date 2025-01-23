@@ -1,4 +1,4 @@
-package org.example.library_jpa;
+package org.example.libraryJPA;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
